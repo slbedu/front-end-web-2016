@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Advanced JavaScript - Part 1</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css" id="theme">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="syntax/xcode.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'node_modules/reveal.js/css/print/pdf.css' : 'node_modules/reveal.js/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <style media="screen">
+    .reveal {
+        background-image: url("./images/sap-logo.png");
+        background-size: auto 10%;
+        background-repeat: no-repeat;
+        background-position: 6px 6px;
+    }
+    
+    .reveal pre code {
+        background: #eee;
+        color: black;
+    }
+    
+    .section-logo {
+        width: 400px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>JavaScript</h1>
+                <h3>Въведение. Синтаксис. Типове данни</h3>
+            </section>
+            <section>
+                <h1>Съдържание</h1>
+                <ul>
+                    <li class="fragment">
+                        <h5>Малко история ...</h5></li>
+                    <li class="fragment">
+                        <h5>За какво се използзва JavaScript?</h5></li>
+                    <li class="fragment">
+                        <h5>Tипове данни</h5></li>
+                </ul>
+            </section>
+            <section>
+                <section>
+                    <h2>Да припомним</h2>
+                    <img src="images/htmlcss.png" class="section-logo" alt="Да припомним" />
+                </section>
+                <section>
+                    <h4>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">Какво е HTML?</a></h4>
+                    <p class="fragment">HyperText Markup Language</p>
+                    <p class="fragment">Език за репрезентиране на уеб страници</p>
+                    <p class="fragment">Дефинира съдържанието на страницата, но не функционалостта ѝ</p>
+                </section>
+                <section>
+                    <h4>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">Какво е CSS?</a></h4>
+                    <p class="fragment">Cascading Style Sheets</p>
+                    <p class="fragment">Описва презентацията на HTML или XML документи</p>
+                    <p class="fragment">Описва как елементите трябва да се рендират на страницата</p>
+                </section>
+                <section>
+                    <h4><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors" target="_blank">Какво е разликата между</a></h4>
+                    <p class="fragment"><code>a</code>, <code>#a</code>, <code>.a</code>, <code>*</code></p>
+                    <p class="fragment"><code>color</code>, <code>background-color</code>, <code>border-color</code></p>
+                    <p class="fragment">display: <code>block</code>, <code>inline</code>, <code>flex</code>, сещате ли се за други?</p>
+                    <p class="fragment">Какво е <code>!important</code>?</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>JavaScript</h2>
+                    <img src="images/js.png" alt="JavaScript" />
+                </section>
+                <section>
+                    <h4>Малко история</h4>
+                    <ul>
+                        <li class="fragment">Създаден за 10 дни през май 1995</li>
+                        <li class="fragment">Mocha - > LiveScript - > JavaScript</li>
+                        <li class="fragment">Brendan Eich (Netscape)</li>
+                        <li class="fragment">6 големи версии и 7ма в прогрес</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>JavaScript може да</h4>
+                    <ul>
+                        <li class="fragment">Добавя функционалност в уеб сайтове</li>
+                        <li class="fragment">Валидация на форми</li>
+                        <li class="fragment">Връзка client-server</li>
+                        <li class="fragment">Кеширане при клиента</li>
+                        <li class="fragment">Контрол на бисквитки</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>JavaScript не може да</h4>
+                    <ul>
+                        <li class="fragment">Записва файлове на сървър</li>
+                        <li class="fragment">Пише и чете от файловата система</li>
+                        <li class="fragment">Контролира прозорци, които не са отворени от него</li>
+                        <li class="fragment">Защити използваните картинки и сорс код в уеб страница</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">NodeJS - сървърен JavaScript</a></h4>
+                    <img src="images/nodejs.png" alt="NodeJS" class="section-logo" />
+                </section>
+                <section>
+                    <h4>Като цяло</h4>
+                    <ul>
+                        <li class="fragment">Мултиплатформен</li>
+                        <li class="fragment">Скриптов</li>
+                        <li class="fragment">Нетипизиран</li>
+                        <li class="fragment">Обектно ориентиран</li>
+                        <li class="fragment">Може да работи при клиента и на сървъра</li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>JavaScript & типове данни</h2>
+                    <img src="images/data.jpg" class="section-logo" alt="Tипове данни" />
+                </section>
+                <section>
+                    <h4>Добавяне на JavaScript</h4>
+                    <p>script таг в HTML страницата</p>
+                    <pre><code><script>
+	// my JavaScript here
+</script>
+</code></pre>
+                    <p>чрез външен файл</p>
+                    <pre><code><script src="path/script.js" type="text/javascript"></script></code></pre>
+                    <p>asnyc & defer</p>
+                </section>
+
+                 <section>
+                    <h4>var vs. *let vs. *const</h4>
+                    <ul>
+                        <li class="fragment">var - function scope</li>
+                        <li class="fragment">*let - block scope</li>
+                        <li class="fragment">*const - constants</li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h4>Примитивни типове</h4>
+                    <ul>
+                        <li class="fragment">булеви</li>
+                        <li class="fragment">null</li>
+                        <li class="fragment">undefined</li>
+                        <li class="fragment">Number</li>
+                        <li class="fragment">String</li>
+                        <li class="fragment">*Symbol</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Пример</h4>
+                    <pre><code>var a = 5;
+var b = a;
+
+b = 10;
+
+console.log(a); // 5
+console.log(b); // 10</code></pre>
+                </section>
+                <section>
+                    <h4>typeof</h4>
+                    <pre><code>console.log(typeof "FMI"); // string
+console.log(typeof 2016); // number 
+console.log(typeof true); // boolean 
+console.log(typeof 5.5) // number 
+console.log(typeof undefined); // undefined
+console.log(typeof null); //object 
+</code></pre>
+                </section>
+                <section>
+                    <h4>Референтни типове - обекти</h4>
+                    <ul>
+                        <li class="fragment">Неподреден списък от свойства, всяко от които има име и стойност</li>
+                        <li class="fragment">В JavaScript почти всичко е обекти (освен примитивните типове)</li>
+                        <li class="fragment">Присвояването на стойност отговаря на записването на указател към истинския обект в паметта</li>
+                    </ul>
+                    <img class="fragment" src="images/objects.png" alt="Обекти" />
+                </section>
+                <section>
+                    <h4>Референтни типове - присвояване</h4>
+                    <pre><code>var object1 = new Object();
+var object2 = object1;
+</code></pre>
+                    <img class="fragment" src="images/reference.png" alt="Референтни типове" />
+
+                </section>
+            </section>
+            <section>
+                <h2>var thank = "you!";</h2>
+                <p style="text-align: left;">
+                    var tutors = [{
+                    <br> &nbsp;&nbsp;&nbsp;&nbsp; name: "Мартин Христов",
+                    <br> &nbsp;&nbsp;&nbsp;&nbsp; email: "<a href="mailto:martin.r.hristov@sap.com">martin.r.hristov@sap.com</a>"
+                    <br> }];
+                </p>
+            </section>
+        </div>
+    </div>
+    <script src="node_modules/reveal.js/lib/js/head.min.js"></script>
+    <script src="node_modules/reveal.js/js/reveal.js"></script>
+    <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'convex',
+        dependencies: [{
+            src: 'node_modules/reveal.js/lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'node_modules/reveal.js/plugin/markdown/marked.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'node_modules/reveal.js/plugin/markdown/markdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'node_modules/reveal.js/plugin/highlight/highlight.js',
+            async: true,
+            condition: function() {
+                return !!document.querySelector('pre code');
+            },
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'node_modules/reveal.js/plugin/zoom-js/zoom.js',
+            async: true
+        }, {
+            src: 'node_modules/reveal.js/plugin/notes/notes.js',
+            async: true
+        }]
+    });
+
+    RevealCSSSnippet({
+        //el is a DOM node that you wish to scope the CSS too. The scoping is done via attribute selector, so beware of specificity issues with existing styles. The default is no scoping, which allows you to write CSS to target anything in the presentation.
+        el: document.getElementById('targetElement'),
+
+        //cssValue is the default CSS to be loaded into the block at initialization. The default is empty string.
+        cssValue: "background: #ff0;\r\nwidth: 500px;\r\nheight: 50px;"
+    });
+    </script>
+</body>
+
+</html>
