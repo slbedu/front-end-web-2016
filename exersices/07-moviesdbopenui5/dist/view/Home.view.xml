@@ -1,0 +1,51 @@
+<mvc:View controllerName="com.sap.moviesdb.controller.Home" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<customHeader>
+					<Bar>
+						<contentLeft><Link href="/" text="The Movie Catalog"/></contentLeft>
+						<contentRight>
+							<SearchField placeholder="Search by year" search="onSearch"></SearchField>
+						</contentRight>
+					</Bar>
+				</customHeader>
+				<content>
+					<Panel height="3rem" backgroundDesign="Solid" id="welcomePanel">
+						<Title level="H3" text="To see the 20 top rated films for each year between 1990-2015 use the search bar at the top."/>
+					</Panel>
+					<Panel id="moviesPanel">
+						<!--List items="{/results}">
+							<StandardListItem title="{title}"></StandardListItem>
+						</List-->
+						<!--l:Grid defaultSpan="L4 M6 S6" class="sapUiSmallMarginTop" content="{/results}">
+							<ObjectListItem id="productitem-large-1" title="{title}" intro="{Category}" icon="http://image.tmdb.org/t/p/w92/{poster_path}">
+								<layoutData>
+									<l:GridData span="L6 M12 S12"/>
+								</layoutData>
+							</ObjectListItem>
+						</l:Grid-->
+						<l:Grid defaultSpan="L6 M6 S10" class="sapUiSmallMarginTop" content="{/results}">
+							<l:content>
+								<VBox>
+									<HBox width="100%">
+										<items>
+											<Image src="http://image.tmdb.org/t/p/w92/{poster_path}" width="100%"></Image>
+											<Label text="Rating placeholders" width="100%"></Label>
+										</items>
+									</HBox>
+									<layoutData>
+										<l:GridData span="L3 M3 S8" linebreakL="true" linebreakM="true" linebreakS="true"/>
+									</layoutData>
+									<Text text="{title}" class="nameTitle"/>
+									<Text text="{overview}"/>
+								</VBox>
+							</l:content>
+						</l:Grid>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

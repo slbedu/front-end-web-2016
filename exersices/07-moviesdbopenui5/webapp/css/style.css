@@ -1,0 +1,75 @@
+/* Enter your custom styles here */
+
+body.sapUiBody,
+body .sapMShell,
+body .sapUiGlobalBackgroundColor,
+body .sapMShellGlobalInnerBackground,
+body sapMShellGlobalOuterBackground,
+body sapUiRootBackground {
+    color: #c8c8c8;
+    /*background-color: #272b30;*/
+    background: #272b30;
+}
+
+body .sapMPanelBGSolid {
+    background-color: #1c1e22
+}
+
+.moviesheader.sapMHeader-CTX {
+    background-image: linear-gradient(#8a9196, #7a8288 60%, #70787d);
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    height: 3rem;
+    line-height: 2.5rem;
+}
+
+.sapMLnk {
+    color: #cccccc !important;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.sapUiRespGrid .sapMFlexBox.sapMVBox:not(.sapMFlexItem) {
+    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: 10px 10px 5px green;
+}
+
+.welcomePanel {
+    background-color: #1c1e22;
+}
+
+.sapMBar {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.welcomeText {
+    font-size: 4rem;
+    color: rgb(200, 200, 200);
+}
+.welcomeHint {
+	font-size: 1.3rem;
+}
+
+.nameTitle {
+    font-size: 2.5rem;
+    color: rgb(200, 200, 200);
+}
+
+.searchField {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+.moreInfo {
+    background-color: #3e444c;
+    border-top: 1px solid rgba(0, 0, 0, 0.6);
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.overviewText {
+	color: #c8c8c8;
+	font-size: 1.2rem;
+}

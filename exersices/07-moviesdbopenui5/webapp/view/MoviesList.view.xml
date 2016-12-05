@@ -1,0 +1,55 @@
+<mvc:View controllerName="com.sap.moviesdb.controller.MoviesList" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<customHeader>
+					<Bar class="moviesheader" id="myHeader">
+						<contentLeft><Link href="/" text="The Movie Catalog" class="homeLink"/></contentLeft>
+						<contentRight>
+							<SearchField placeholder="Search by year" search="onSearch" class="searchField"/>
+						</contentRight>
+					</Bar>
+				</customHeader>
+				<content>
+					<Panel height="100%" backgroundDesign="Solid" id="welcomePanel" class="welcomePanel">
+						<Label class="welcomeText" text="Welcome to the movie catalogue"/>
+						<Label class="welcomeHint" text="To see the 20 top rated films for each year between 1990-2015 use the search bar at the top."/>
+					</Panel>
+					<Panel id="moviesPanel" visible="false">
+						<!--List items="{/results}">
+							<StandardListItem title="{title}"></StandardListItem>
+						</List-->
+						<!--l:Grid defaultSpan="L4 M6 S6" class="sapUiSmallMarginTop" content="{/results}">
+							<ObjectListItem id="productitem-large-1" title="{title}" intro="{Category}" icon="http://image.tmdb.org/t/p/w92/{poster_path}">
+								<layoutData>
+									<l:GridData span="L6 M12 S12"/>
+								</layoutData>
+							</ObjectListItem>
+						</l:Grid-->
+						<l:Grid defaultSpan="L6 M6 S10" class="sapUiSmallMarginTop" content="{/results}">
+							<l:content>
+								<VBox>
+									<HBox width="100%" class="sapUiResponsiveContentPadding">
+										<items>
+											<VBox width="40%">
+												<Image src="http://image.tmdb.org/t/p/w92/{poster_path}" width="100%" alt="Poster for {title}" decorative="false"/>
+												<RatingIndicator id="rating" value="{vote_average}" maxValue="10" iconSize="12px"/>
+											</VBox>
+											<Text id="title" text="{title}" class="nameTitle sapUiTinyMargin"/>
+										</items>
+									</HBox>
+									<Bar id="moreInfoBar" class="moreInfo">
+										<contentRight>
+											<Button text="More Information" press="onMoreInformationPresssed"></Button>
+										</contentRight>
+									</Bar>
+								</VBox>
+							</l:content>
+						</l:Grid>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
